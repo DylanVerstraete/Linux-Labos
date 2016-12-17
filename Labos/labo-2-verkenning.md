@@ -380,7 +380,16 @@ Maak in de directory `linux/` twee tekstbestanden aan, met naam `tekst1a` en `te
     ```
 
 2. Maak een *harde link* van `tekst1a` naar `tekst1b`
+
+    ```
+    ln tekst1a tekst1b
+    ```
+    
 3. Maak een *symbolische link* van `tekst2a` naar `tekst2b`
+
+    ```
+    ln -s tekst2a tekst2b
+    ```
 4. Voor het volgende commando uit en geef de uitvoer:
 
     $ ln tekst1a tekst1b
