@@ -254,7 +254,7 @@ Behoud deze directorystructuur voor de volgende oefeningen over bestanden.
 6. Kopieer `file1` naar de directory `f/` (die zou je nog moeten hebben van vorige oefening)
 
     ```
-    $ cp file1 f
+    $ cp file1 f/
     ```
 
 7. Kopieer `file1` en file2 in één keer naar `f/g/`. Je zou de gegeven situatie moeten krijgen.
