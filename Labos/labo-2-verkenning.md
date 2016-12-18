@@ -392,6 +392,7 @@ Maak in de directory `linux/` twee tekstbestanden aan, met naam `tekst1a` en `te
     ```
 4. Voor het volgende commando uit en geef de uitvoer:
 
+    ```
     $ ln tekst1a tekst1b
     $ ln -s tekst2a tekst2b
     $ ls -l tekst*
