@@ -34,18 +34,18 @@ Maak ook een bestand aan met de naam `autokentekens` met deze inhoud:
     $ vim landen
     ```
 
-2. Hoe ga je van *normal mode* naar *insert mode*? i
+2. Hoe ga je van *normal mode* naar *insert mode*? `i`
+
 3. Geef verschillende manieren:
 
     | Invoegen vanaf                  | Commando |
-    | :---                  i         | :---     |
-    | op de huidige cursorpoditie     | `i`      |
+    | :---                            | :---     |
+    | op de huidige cursorpositie     | `i`      |
     | rechts van de cursor            | `a`      |
     | begin van huidige regel         | `I`      |
     | einde van huidige regel         | `A`      |
     | regel toevoegen onder deze      | `o`      |
     | regel toevoegen op huidige lijn | `O`      |
-    |                                 |          |
 
 4. Hoe kopieer je vanuit *normal mode*?
 
