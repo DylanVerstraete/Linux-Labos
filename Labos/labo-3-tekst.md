@@ -134,15 +134,15 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 6. Sorteer `landenkentekens2` alfabetisch op de autokentekens. Sla het bekomen resultaat op in `gesorteerdeautokentekens`. Controleer het resultaat.
 
     ```
-    $ sort -k2 landenkentekens2 > gesorteerdeautokentekens
+    $ sort landenkentekens2 > gesorteerdeautokentekens
     $ cat gesorteerdeautokentekens
     België B
-    Zwitserland CH
     Duitsland D
-    Spanje E
     Frankrijk F
     Italië I
     Nederland NL
+    Spanje E
+    Zwitserland CH
     ```
 
 ## Filters
