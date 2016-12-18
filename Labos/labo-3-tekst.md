@@ -128,7 +128,7 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 
     ```
     $  echo "Spanje SP" >> landenkentekens2
-    UITVOER
+    $  echo "Italië I" >> landenkentekens2
     ```
 
 6. Sorteer `landenkentekens2` alfabetisch op de autokentekens. Sla het bekomen resultaat op in `gesorteerdeautokentekens`. Controleer het resultaat.
