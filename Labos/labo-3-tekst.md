@@ -116,7 +116,7 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 4. Controleer of de inhoud van `landenkentekens2` overeenkomt met de uitvoer hieronder.
 
     ```
-    $ COMMANDO
+    $ cat landenkentekens2
     België B
     Frankrijk F
     Zwitserland CH
