@@ -45,7 +45,9 @@ Commands
 ----------
 
 `$ chmod 664` -> Adds the permissions to a file / directory.
+
 `$ chgrp group item` -> Adds the designated group for that file/directory (inherits group perms)
+
 `$ chown user item` -> Sets owner to a file / directory.
 
 Non Decimal Modifiers
@@ -61,7 +63,9 @@ Execute | x
 Commands
 ---------
 `chmod u-rwx item` -> Gives all the permissions to the owner
+
 `chmod g-x item` -> Gives the group the execute permission
+
 `chmod o-r item` -> Gives public / others read permission.
 
 
