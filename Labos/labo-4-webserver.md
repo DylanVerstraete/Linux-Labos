@@ -24,7 +24,7 @@ enable -> draaien bij start VM
 4. 'sudo firewall-cmd --list-al' geeft overzicht van alle firewall regels
 5. firewall correct configureren
 6. sudo firewall-cmd --add-service=http om http to te voegen
-belangrijk: na heropstarten vergeet firewall dit -> optie --permanent toeveogen aan commando:
+belangrijk: na heropstarten vergeet firewall dit -> optie --permanent toevoegen aan commando:
 sudo firewall-cmd -add-service=http --permanent
 dit commando voert wijzigingen niet onmiddelijk door -> zowel met als zonder permanent eens uitvoeren
 7. om poort toe te voegen: 'sudo firewall-cmd --add-port=80/tcp' (opnieuw zowel met optie permanent als zonder)
