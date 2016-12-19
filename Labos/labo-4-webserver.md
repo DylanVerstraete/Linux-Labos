@@ -21,7 +21,7 @@ Beschrijf hier de exacte procedure hoe je dit uitgevoerd hebt. Zorg er voor dat 
 3. commando 'sudo systemctl status httpd' voor de status van apache
 commando's van systemctl: start, stop, status, restart, enable
 enable -> draaien bij start VM
-4. 'sudo firewall-cmd --list-al' geeft overzicht van alle firewall regels
+4. 'sudo firewall-cmd --list-all' geeft overzicht van alle firewall regels
 5. firewall correct configureren
 6. sudo firewall-cmd --add-service=http om http to te voegen
 belangrijk: na heropstarten vergeet firewall dit -> optie --permanent toevoegen aan commando:
