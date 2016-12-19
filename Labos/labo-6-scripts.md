@@ -168,6 +168,41 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
 
 8. Dit script moet testen of een bestand (opvragen aan gebruiker) bestaat en uitvoerbaar is, indien niet, moet het uitvoerbaar gemaakt worden.
 9. Dit script maakt gebruik van het cal (kalender commando). De gebruiker wordt verplicht om de drie eerste letters van de maand (jan-feb-maa-apr-mei-jun-jul-aug-sep-okt-nov-dec) in te geven. Geef foutmelding indien geen correcte maand wordt ingegeven en stop het script. De gebruiker kan ook het jaartal ingeven (niet verplicht). Indien niet ingegeven wordt het huidige jaar gebruikt
+	
+	Oplossing:
+	```
+	#! /bin/bash
+	if [ "${#}" -lt "1" ]; then
+		echo "Fout in aantal parameters"
+		exit 1
+	fi
+	maand="${1}"
+	if [ "${maand}" - ne "3" ]; then
+		echo "Maand moet 3 letters lang zijn"
+		exit 2
+	fi
+	case "$maand" in
+		"jan") maand="1" ;; 
+		"feb") maand="2" ;;
+		"maa") maand="3" ;;
+		"apr") maand="4" ;;
+		"mei") maand="5" ;;
+		"jun") maand="6" ;;
+		"jul") maand="7" ;;
+		"aug") maand="8" ;;
+		"sep") maand="9" ;;
+		"okt") maand="10" ;;
+		"nov") maand="11" ;;
+		"dec") maand="12" ;;
+	esac
+	if [ "${#}" -eq "2" ]; then
+		jaar="${2}"
+	else
+		jaar=$(date + "%Y")
+	fi 
+	cal "$maand" "$jaar"
+	```
+
 10. Schrijf een script `passphrase.sh` dat een willekeurige wachtwoordzin genereert zoals gesuggereerd door <http://xkcd.com/936/>. Gebruik een woordenlijst zoals `/usr/share/dict/words` (moet je mogelijks installeren). Opties en argumenten:
     - `passphrase.sh [-h|-?|--help]`: druk uitleg over het commando af en sluit af met exit-status 0. Eventuele andere opties en argumenten worden genegeerd.
     - `passphrase.sh [N] [WORDS]`
