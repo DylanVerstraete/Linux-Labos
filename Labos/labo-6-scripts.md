@@ -103,6 +103,18 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
 	```
 
 4. Schrijf een script `datum.sh` dat het aantal elementen van het commando `date` weergeeft en daarna al de elementen onder elkaar. Maak gebruik van positionele parameters en het `set` commando. Gebruik ook een `while`-lus.
+
+	Oplossing:
+	```
+	#! /bin/bash
+
+	set $(date)
+	echo "${#}"
+	while [ "${#}" -n "0" ]; do
+		echo "$1"
+	shift
+	done
+	```
 5. Vraag aan de gebruiker van dit script een naam voor een bestand, schrijf dit vervolgens weg en zorg ervoor dat het bestand uitvoerbaar is. (opm. geen unit tests)
 
 	Oplossing:
