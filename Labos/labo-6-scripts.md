@@ -70,6 +70,17 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
     een
     test
     ```
+    Oplossing: 
+    ```
+    #! /bin/bash
+    if [ "${#}" -eq "0" ]; then
+	    echo "Geen parameters meegegeven"
+	    exit 1
+    fi
+    for var in "${@}"; do
+	    echo "$var"
+    done
+    ```
 
 2. Schrijf een script `gebruikerslijst.sh` dat een gesorteerde lijst van users (uit `/etc/passwd`) weergeeft op het scherm. Maak gebruik van het het commando `cut`.
 3. Schrijf een script `elf-params.sh` dat maximaal 11 parameters kan weergeven op het scherm. Positionele parameters en `shift` zijn een tip.
