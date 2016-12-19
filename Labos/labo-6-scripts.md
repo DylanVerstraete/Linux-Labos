@@ -84,6 +84,18 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
 
 2. Schrijf een script `gebruikerslijst.sh` dat een gesorteerde lijst van users (uit `/etc/passwd`) weergeeft op het scherm. Maak gebruik van het het commando `cut`.
 3. Schrijf een script `elf-params.sh` dat maximaal 11 parameters kan weergeven op het scherm. Positionele parameters en `shift` zijn een tip.
+	Oplossing:
+	```
+	#! /bin/bash
+	count="$#"
+	if [ "${#}" -gt "11" ]; then
+		count=11
+	fi
+	for i in $(seq 1 "$count"); do
+		echo "${!i}"
+	done
+	```
+
 4. Schrijf een script `datum.sh` dat het aantal elementen van het commando `date` weergeeft en daarna al de elementen onder elkaar. Maak gebruik van positionele parameters en het `set` commando. Gebruik ook een `while`-lus.
 5. Vraag aan de gebruiker van dit script een naam voor een bestand, schrijf dit vervolgens weg en zorg ervoor dat het bestand uitvoerbaar is. (opm. geen unit tests)
 6. Dit script zal een bestand kopiëren. Bron en doel worden aan de gebruiker gevraagd. Test of het doelbestand bestaat. Indien wel, wordt het script afgebroken.  (opm. geen unit tests)
