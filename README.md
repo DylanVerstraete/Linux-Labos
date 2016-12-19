@@ -9,7 +9,7 @@ Indien je wijzigingen wilt laten weten vraag je een pull request aan zodat we de
 # Linux Permissions
 
 |   Perm	|   -	 |  Own 	|   Grp	|   Size	| LastMod | Name |
-|---	|---	|---	|---	|---	|
+|---	|---	|---	|---	|---	| --- | --- |
 |   drwxrwxr-x	|   2	|   jesse	|   jesse	|   4096	| Jan 30 20:15 | .
 |   -rw-rw-r--	|   1	|   jesse	|   jesse	|   0			| Jan 30 20:15 | cat
 |   -rw-rw-r--	|   1	|   jesse	|   jesse	|   0			| Jan 30 20:15 | dog
