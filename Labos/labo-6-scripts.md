@@ -134,6 +134,21 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
 	```
 
 6. Dit script zal een bestand kopiëren. Bron en doel worden aan de gebruiker gevraagd. Test of het doelbestand bestaat. Indien wel, wordt het script afgebroken.  (opm. geen unit tests)
+
+	Oplossing
+	```
+	#! /bin/bash
+	if [ "${#}" -ne "2" ]; then
+		echo "Fout in aantal parameters"
+		exit 1
+	fi
+	if [ -f "${2}" ]; then
+		echo "Bestandlocatie bestaat al"
+		exit 2
+	fi
+	cp "${1}" "${2}"
+	```
+
 7. Sorteer de inhoud van een bestand (arg1) en toon de laatste regels (aantal regels = arg2). Indien argument 1 ontbreekt, melding geven en afbreken. Indien argument 2 ontbreekt neemt men 20 als default waarde. Om te testen maak je een bestand aan met alle letters van het alfabet, in de volgorde van je toetsenbord. (opm. geen unit tests)
 
 	Oplossing:
