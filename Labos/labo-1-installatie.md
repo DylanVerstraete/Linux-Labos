@@ -233,6 +233,9 @@ Tussen de vragen is ruimte voorzien om je antwoorden in te vullen. Het gaat telk
 
         ```
         $ groepdel alice
+        eerst user verwijderen , dan groep
+        userdel alice
+        groupdel sporten
         ???
         ```
 
