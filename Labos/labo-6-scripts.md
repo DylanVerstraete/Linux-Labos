@@ -104,6 +104,23 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
 
 4. Schrijf een script `datum.sh` dat het aantal elementen van het commando `date` weergeeft en daarna al de elementen onder elkaar. Maak gebruik van positionele parameters en het `set` commando. Gebruik ook een `while`-lus.
 5. Vraag aan de gebruiker van dit script een naam voor een bestand, schrijf dit vervolgens weg en zorg ervoor dat het bestand uitvoerbaar is. (opm. geen unit tests)
+
+	Oplossing:
+	```
+	#! /bin/bash
+
+	if [ "${#}" -ne "1" ]; then
+		echo "Fout in aantal parameters"
+		exit 1
+	fi
+	touch "${1}"
+	chmod +x "${1}"
+	echo "#! /bin/bash" >> "${1}"
+	echo "set -o errexit #afbreken wanneer commando fout" >> "${1}"
+	echo "set -o nounset afbreken wanneer var niet gedefinieerd" >> "${1}"
+	echo "set -o pipefail #afbreken bij verkeerde pipeline" >> "${1}"
+	```
+
 6. Dit script zal een bestand kopiëren. Bron en doel worden aan de gebruiker gevraagd. Test of het doelbestand bestaat. Indien wel, wordt het script afgebroken.  (opm. geen unit tests)
 7. Sorteer de inhoud van een bestand (arg1) en toon de laatste regels (aantal regels = arg2). Indien argument 1 ontbreekt, melding geven en afbreken. Indien argument 2 ontbreekt neemt men 20 als default waarde. Om te testen maak je een bestand aan met alle letters van het alfabet, in de volgorde van je toetsenbord. (opm. geen unit tests)
 8. Dit script moet testen of een bestand (opvragen aan gebruiker) bestaat en uitvoerbaar is, indien niet, moet het uitvoerbaar gemaakt worden.
