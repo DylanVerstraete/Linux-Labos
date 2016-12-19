@@ -83,6 +83,12 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
     ```
 
 2. Schrijf een script `gebruikerslijst.sh` dat een gesorteerde lijst van users (uit `/etc/passwd`) weergeeft op het scherm. Maak gebruik van het het commando `cut`.
+
+	Oplossing:
+	```
+	#! /bin/bash
+	cut -d= -f1 /etc/passwd | sort
+	```
 3. Schrijf een script `elf-params.sh` dat maximaal 11 parameters kan weergeven op het scherm. Positionele parameters en `shift` zijn een tip.
 	Oplossing:
 	```
