@@ -34,18 +34,18 @@ Maak ook een bestand aan met de naam `autokentekens` met deze inhoud:
     $ vim landen
     ```
 
-2. Hoe ga je van *normal mode* naar *insert mode*? i
+2. Hoe ga je van *normal mode* naar *insert mode*? `i`
+
 3. Geef verschillende manieren:
 
     | Invoegen vanaf                  | Commando |
-    | :---                  i         | :---     |
-    | op de huidige cursorpoditie     | `i`      |
+    | :---                            | :---     |
+    | op de huidige cursorpositie     | `i`      |
     | rechts van de cursor            | `a`      |
     | begin van huidige regel         | `I`      |
     | einde van huidige regel         | `A`      |
     | regel toevoegen onder deze      | `o`      |
     | regel toevoegen op huidige lijn | `O`      |
-    |                                 |          |
 
 4. Hoe kopieer je vanuit *normal mode*?
 
@@ -116,7 +116,7 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 4. Controleer of de inhoud van `landenkentekens2` overeenkomt met de uitvoer hieronder.
 
     ```
-    $ COMMANDO
+    $ cat landenkentekens2
     België B
     Frankrijk F
     Zwitserland CH
@@ -128,21 +128,21 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 
     ```
     $  echo "Spanje SP" >> landenkentekens2
-    UITVOER
+    $  echo "Italië I" >> landenkentekens2
     ```
 
 6. Sorteer `landenkentekens2` alfabetisch op de autokentekens. Sla het bekomen resultaat op in `gesorteerdeautokentekens`. Controleer het resultaat.
 
     ```
-    $ sort -k2 landenkentekens2 > gesorteerdeautokentekens
+    $ sort landenkentekens2 > gesorteerdeautokentekens
     $ cat gesorteerdeautokentekens
     België B
-    Zwitserland CH
     Duitsland D
-    Spanje E
     Frankrijk F
     Italië I
     Nederland NL
+    Spanje E
+    Zwitserland CH
     ```
 
 ## Filters
