@@ -31,8 +31,8 @@ dit commando voert wijzigingen niet onmiddelijk door -> zowel met als zonder per
 8. testen of netwerk service correct draait: 'ss' (nieuwere versie van netstat)
 enkele opites: -l -> alle server poorten, -u -> open ip poorten, -p -> welke processen erachter draaien (voor deze optie is sudo nodig)
 9. testen of php werk: web pagina's zitten onder /var/www
-10. ga naar /var/www/html en maak in deze map een bestand 'index.php' aan (met sudo)
-11. vul bestand met html pagina (en een lijnphp: <?php phpinfo(); ?>
+10. ga naar /var/www/html en maak in deze map een bestand 'index.php' aan (met sudo) `sudo su`
+11. vul bestand met html pagina (en een lijnphp: <?php phpinfo(); ?> `echo "<?php phpinfo(); ?>" > index.php`
 12. surf naar pagina, kijk of het werkt (je ziet phpinfo)
 
 ## MariaDB (MySQL)
