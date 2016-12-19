@@ -1,0 +1,253 @@
+LINUX SCRIPTS
+
+----------Onderelkaar.sh----------
+
+#! /bin/bash
+
+if [ "${#}" -eq "0" ]; then
+	echo "Geen parameters meegegeven"
+	exit 1
+fi
+
+for var in "${@}"; do
+	echo "$var"
+done
+
+----------Gebruikerslijst.sh----------
+
+#! /bin/bash
+
+cut -d= -f1 /etc/passwd | sort
+
+----------elf-params.sh----------
+
+#! /bin/bash
+
+count="$#"
+
+if [ "${#}" -gt "11" ]; then
+	count=11
+fi
+
+for i in $(seq 1 "$count"); do
+	echo "${!i}"
+done
+
+----------elf-params2.sh----------
+
+#! /bin/bash
+
+max="11"
+
+while [ "$max" -gt "0" -a "${#}" -ne "0" ]; do
+	echo "$1"
+	shift
+	let max--
+done
+
+----------datum.shi----------
+
+#! /bin/bash
+
+set $(date)
+echo "${#}"
+while [ "${#}" -n "0" ]; do
+	echo "$1"
+	shift
+done
+
+----------maakscript.sh----------
+
+#! /bin/bash
+
+if [ "${#}" -ne "1" ]; then
+	echo "Fout in aantal parameters"
+	exit 1
+fi
+
+touch "${1}"
+chmod +x "${1}"
+echo "#! /bin/bash" >> "${1}"
+echo "set -o errexit #afbreken wanneer commando fout" >> "${1}"
+echo "set -o nounset afbreken wanneer var niet gedefinieerd" >> "${1}"
+echo "set -o pipefail #afbreken bij verkeerde pipeline" >> "${1}"
+
+----------kopieerBestand.sh----------
+
+#! /bin/bash
+
+if [ "${#}" -ne "2" ]; then
+	echo "Fout in aantal parameters"
+	exit 1
+fi
+
+if [ -f "${2}" ]; then
+	echo "Bestandlocatie bestaat al"
+	exit 2
+fi
+
+cp "${1}" "${2}"
+
+----------kopieerBestand2.sh----------
+
+#! /bin/bash
+
+echo "Locatie: "
+read doel
+
+if [ -f "doel" ]; then
+	echo "Doellocatie bestaat al"
+	exit
+fi
+
+echo "Bestand at je wil kopieren: "
+read bron
+
+cp "$bron" "$doel"
+
+----------sorteer.sh----------
+
+#! /bin/bash
+
+if [ "${#}" -lt "1" ]; then
+	echo "Minstens 1 parameters vereisd"
+	exit 1
+fi
+
+if [ "${#}" -eq "2"]; then
+	aantal="${2}"
+else
+	aantal="20"
+fi
+
+sort "${1}" | tail -n "$aantal" 
+
+----------uitvoerbaar.sh----------
+
+#! /bin/bash
+
+if [ "${#}" -ne "1" ]; then
+	echo "Fout in aantal parameters"
+	exit 1
+fi
+
+if [ -f "${1}" ]; then
+	if [ -x "${1}" ]; then
+		chmod -x "${1}"
+		echo "Bestand uitvoerbaar"
+	fi
+fi
+
+----------Kalender.sh----------
+
+#! /bin/bash
+
+if [ "${#}" -lt "1" ]; then
+	echo "Fout in aantal parameters"
+	exit 1
+fi
+
+maand="${1}"
+
+if [ "${maand}" - ne "3" ]; then
+	echo "Maand moet 3 letters lang zijn"
+	exit 2
+fi
+
+case "$maand" in
+	"jan") maand="1" ;; 
+	"feb") maand="2" ;;
+	"maa") maand="3" ;;
+	"apr") maand="4" ;;
+	"mei") maand="5" ;;
+	"jun") maand="6" ;;
+	"jul") maand="7" ;;
+	"aug") maand="8" ;;
+	"sep") maand="9" ;;
+	"okt") maand="10" ;;
+	"nov") maand="11" ;;
+	"dec") maand="12" ;;
+esac
+
+if [ "${#}" -eq "2" ]; then
+	jaar="${2}"
+else
+	jaar=$(date + "%Y")
+fi 
+
+cal "$maand" "$jaar"
+
+----------Kalender2.sh----------
+
+#! /bin/bash
+
+if [ "${#}" -lt "1" ]; then
+	echo "Fout in aantal parameters"
+	exit 1
+fi
+
+maand="${1}"
+
+if [ "${maand}" - ne "3" ]; then
+	echo "Maand moet 3 letters lang zijn"
+	exit 2
+fi
+
+maanden=(jan feb maa apr mei jun jul aug sep okt nov dec)
+index=0
+
+while [ "$index" -lt "12" ]; do
+	if [ "$maand" == "${manden[$index]}" ]; then
+		break;
+	fi
+	((index=index+1))
+done
+
+if [ "$index" -gt "12" ]; then
+	echo "Geef geldige maand in"
+	exit 3
+fi
+
+((index=index+1))
+
+if [ "${#}" -eq "2" ]; then
+	jaar="${2}"
+else
+	jaar=$(date + "%Y")
+fi
+
+cal "$index" "$jaar"
+
+----------Kalender3.sh----------
+
+#! /bin/bash
+
+if [ "${#}" -lt "1" ]; then
+	echo "Fout in aantal parameters"
+	exit 1
+fi
+
+maand="${1}"
+
+if [ "${maand}" - ne "3" ]; then
+	echo "Maand moet 3 letters lang zijn"
+	exit 2
+fi
+
+declare -A maanden
+maanden=([jan]=1 [feb]=2 [maa]=3 [apr]=4 [mei]=5 [jun]=6 [jul]=7 [aug]=8 [sep]=9 [okt]=10 [nov]=11 [dec]=12)
+
+index="${maanden[$maand]}"
+
+if [ -z index ]; then
+	echo "Geef juiste maand in"
+	exit 3
+fi
+
+if [ "${#}" -eq "2" ]; then
+	jaar="${2}"
+else
+	jaar=$(date + "%Y")
+fi
+
+cal "$index" "$jaar"
