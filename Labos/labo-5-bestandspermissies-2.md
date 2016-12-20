@@ -269,15 +269,15 @@ Kopieer als je eigen gebruiker (niet als root!) nu opnieuw het bestand `/etc/hos
 4. Log in als `alice` en ga naar de directory verkoop. Laat de gebruiker hier een leeg bestand, `bestand1`, aanmaken in de directory verkoop. (Indien je hier problemen ondervindt, log dan in via een andere terminalvenster).
 
     ```
-    $ touch /srv/groep/verkoop/bestand1
+    $ touch /srv/groep/inkoop/bestand1
     UITVOER
     ```
 
 5. Wie is nu eigenaar van `bestand1` en wie de groepseigenaar?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ ls -l
+    alice alice
     ```
 
 6. Zorg er nu voor dat de groepseigenaar van de directory `verkoop` automatisch de groepseigenaar wordt van alle bestanden en directories die onder `verkoop` gemaakt worden. Geef de gebruikte commando’s.
