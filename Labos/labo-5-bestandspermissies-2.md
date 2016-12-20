@@ -283,50 +283,54 @@ Kopieer als je eigen gebruiker (niet als root!) nu opnieuw het bestand `/etc/hos
 6. Zorg er nu voor dat de groepseigenaar van de directory `verkoop` automatisch de groepseigenaar wordt van alle bestanden en directories die onder `verkoop` gemaakt worden. Geef de gebruikte commando’s.
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ sudo -
+      chmod 2770 verkoop
+      chgrp verkoop verkoop
     ```
 
 7. Doe hetzelfde voor de directory `inkoop`. Geef de gebruikte commando’s:
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ sudo -
+      chmost 2770 inkoop
+      chgrp inkoop inkoop
     ```
 
 8. Verander opnieuw naar gebruiker `alice` en laat deze gebruiker een leeg `bestand2` aanmaken in de directory `verkoop`. Geef de gebruikte commando’s:
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ su - alice
+      touch /srv/group/verkoop/bestand2
     ```
 
 9. Wie is nu eigenaar van `bestand2` en wie groepseigenaar?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ ls -l
+      - rw........ alice verkoop 0 20 dec........ bestand2
     ```
 
 10. Laat nu gebruiker `margriet` een leeg bestand `bestand3` aanmaken. Controleer de eigenaar van `bestand3` en de groepseigenaar.
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ su - margriet
+      touch /srv/group/verkoop/bestand3
+      
+      eigenaar margriet group verkoop
     ```
 
 11. Laat nu gebruiker `alice` `bestand3` verwijderen. Lukt dit?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ rm bestand3 
+      JA dit lukt
     ```
 
 12. Zorg er nu voor dat de gebruikers elkaars bestanden niet kunnen verwijderen. Als de gebruiker echter eigenaar is van het betreffende directory mag dit wel. Leg uit hoe je dit doet en controleer. Schrijf je gevolgde procedure op.
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ chmod +t verkoop
+    tlukt :D
     ```
 
 ## Gebruikte bronnen
